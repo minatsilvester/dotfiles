@@ -18,6 +18,7 @@
     "modules-right": [
         // "mpd",
         "idle_inhibitor",
+        "custom/notification",
         "wireplumber",
         "network",
         "power-profiles-daemon",
@@ -223,5 +224,25 @@
 			"suspend": "systemctl suspend",
 			"hibernate": "systemctl hibernate"
 		}
+    },
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "N",
+            "none": "0",
+            "dnd-notification": "D",
+            "dnd-none": "d",
+            "inhibited-notification": "I",
+            "inhibited-none": "i",
+            "dnd-inhibited-notification": "X",
+            "dnd-inhibited-none": "x"
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "sleep 0.1 && swaync-client -t -sw",
+        "on-click-right": "sleep 0.1 && swaync-client -d -sw",
+        "escape": true
     }
 }
