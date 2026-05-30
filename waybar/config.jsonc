@@ -219,24 +219,26 @@
 		"menu": "on-click",
 		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
 		"menu-actions": {
-			"shutdown": "shutdown",
-			"reboot": "reboot",
-			"suspend": "systemctl suspend",
-			"hibernate": "systemctl hibernate"
-		}
+            "lock": "hyprlock",
+            "logout": "hyprctl dispatch exit",
+            "suspend": "systemctl suspend",
+            "hibernate": "systemctl hibernate",
+            "reboot": "systemctl reboot",
+            "shutdown": "systemctl poweroff"
+        }
     },
     "custom/notification": {
         "tooltip": false,
         "format": "{icon}",
         "format-icons": {
-            "notification": "N",
-            "none": "0",
-            "dnd-notification": "D",
-            "dnd-none": "d",
-            "inhibited-notification": "I",
-            "inhibited-none": "i",
-            "dnd-inhibited-notification": "X",
-            "dnd-inhibited-none": "x"
+            "notification": "",
+            "none": "",
+            "dnd-notification": "",
+            "dnd-none": "",
+            "inhibited-notification": "",
+            "inhibited-none": "",
+            "dnd-inhibited-notification": "",
+            "dnd-inhibited-none": ""
         },
         "return-type": "json",
         "exec-if": "which swaync-client",
