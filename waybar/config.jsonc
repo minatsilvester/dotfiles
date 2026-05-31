@@ -221,7 +221,7 @@
 		"menu-actions": {
             "lock": "hyprlock",
             "logout": "hyprctl dispatch exit",
-            "suspend": "systemctl suspend",
+            "suspend": "$HOME/.config/hypr/scripts/suspend-lock.sh",
             "hibernate": "systemctl hibernate",
             "reboot": "systemctl reboot",
             "shutdown": "systemctl poweroff"

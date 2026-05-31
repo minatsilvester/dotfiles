@@ -21,6 +21,14 @@ window#waybar {
 #cpu,
 #battery,
 #custom-power {
+  background: #40485f;
+  color: #e6ebf5;
+  margin: 6px 3px;
+  padding: 4px 10px;
+  border-radius: 14px;
+}
+
+#custom-power {
   color: #ed8796;
   margin-right: 10px;
   padding: 4px 12px;
