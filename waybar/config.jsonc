@@ -93,7 +93,10 @@
         "format-icons": {
             "activated": "",
             "deactivated": ""
-        }
+        },
+        "tooltip": true,
+        "tooltip-format-activated": "Idle lock disabled",
+        "tooltip-format-deactivated": "Idle lock enabled"
     },
     // "tray": {
     //     // "icon-size": 21,
@@ -199,7 +202,10 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "pavucontrol"
+        "on-click": "pavucontrol",
+        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "tooltip": true,
+        "tooltip-format": "L: Settings • R: Mute"
     },
     "custom/media": {
         "format": "{icon} {text}",
