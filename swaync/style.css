@@ -6,6 +6,7 @@
   --noti-bg-alpha: 0.94;
   --noti-bg-darker: rgb(47, 54, 70);
   --noti-bg-hover: rgb(76, 86, 114);
+  --noti-bg-alt: rgba(64, 72, 95, 0.72);
   --noti-bg-focus: rgba(138, 173, 244, 0.18);
   --noti-close-bg: rgba(237, 135, 150, 0.16);
   --noti-close-bg-hover: rgba(237, 135, 150, 0.32);
@@ -42,7 +43,6 @@
 }
 
 /* Fallback for older CSS themes */
-/* Fallback for older CSS themes */
 @define-color cc-bg rgba(52, 59, 79, 0.96);
 @define-color noti-border-color rgba(245, 169, 127, 0.35);
 @define-color noti-bg rgba(64, 72, 95, 0.94);
@@ -50,12 +50,19 @@
 @define-color noti-bg-darker rgb(47, 54, 70);
 @define-color noti-bg-hover rgb(76, 86, 114);
 @define-color noti-bg-hover-opaque rgb(76, 86, 114);
+@define-color noti-bg-alt rgba(64, 72, 95, 0.72);
 @define-color noti-bg-focus rgba(138, 173, 244, 0.18);
 @define-color noti-close-bg rgba(237, 135, 150, 0.16);
 @define-color noti-close-bg-hover rgba(237, 135, 150, 0.32);
 @define-color text-color rgb(230, 235, 245);
 @define-color text-color-disabled rgb(168, 176, 192);
 @define-color bg-selected rgb(245, 169, 127);
+
+* {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 13px;
+  font-weight: 600;
+}
 
 notificationwindow, blankwindow {
   background: transparent;
@@ -564,7 +571,7 @@ notificationwindow, blankwindow {
 }
 
 .per-app-volume {
-  background-color: var(--noti-bg-alt);
+  background-color: var(--mm-surface);
   margin: 8px;
   margin-bottom: 0;
   border-radius: var(--border-radius);
@@ -629,4 +636,36 @@ progressbar progress {
 
 .control-center .control-center-list-placeholder {
   color: var(--mm-muted);
+}
+
+/* Extra polish for OSD-style notifications */
+.notification-row .notification-background .notification .notification-action > button:hover {
+  background: var(--mm-surface-hover);
+  color: var(--mm-orange);
+}
+
+.notification-row .notification-background .notification .notification-action > button:active {
+  background: var(--mm-orange);
+  color: #1f2330;
+}
+
+.notification-row .notification-background .notification .notification-default-action .notification-content progressbar trough {
+  min-height: 8px;
+  background: var(--mm-surface);
+  border-radius: 999px;
+}
+
+.notification-row .notification-background .notification .notification-default-action .notification-content progressbar progress {
+  background: var(--mm-green);
+  border-radius: 999px;
+}
+
+.widget-title > button:hover,
+.widget-inhibitors > button:hover {
+  background: var(--mm-surface-hover);
+  color: var(--mm-orange);
+}
+
+.widget-dnd switch:checked slider {
+  background: #1f2330;
 }
